@@ -2,8 +2,7 @@
 #ifndef __Application_h__
 #define __Application_h__
 
-#include "Prerequest.h"
-#include "GameTimer.h"
+#include "Core.h"
 #include <windows.h>
 
 NAMESPACEBEGIN(GameEngine)
@@ -16,6 +15,11 @@ public:
 
 	virtual bool Init() = 0;
 	virtual int Run() = 0;
+
+	virtual void Clear() = 0;
+	virtual void Present() = 0;
+
+	
 protected:
 	HINSTANCE mhAppInst;
 	GameTimer mTimer;
@@ -23,6 +27,7 @@ protected:
 	std::wstring mMainWndCaption;
 	int mClientWidth;
 	int mClientHeight;
+	Color mClearColor;
 };
 
 NAMESPACEEND

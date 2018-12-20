@@ -1,6 +1,7 @@
 
 
 #include "D3DApplication.h"
+#include "Color.h"
 
 NAMESPACEBEGIN(GameEngine)
 
@@ -455,6 +456,25 @@ void D3DApplication::CalculateFrameStats()
 		frameCnt = 0;
 		timeElapsed += 1.0f;
 	}
+}
+
+void D3DApplication::Clear()
+{
+	assert(md3dImmediateContext);
+	md3dImmediateContext->ClearRenderTargetView(mRenderTargetView, reinterpret_cast<const float*>(&mClearColor));
+	md3dImmediateContext->ClearDepthStencilView(mDepthStencilView, D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
+}
+
+void D3DApplication::Present()
+{
+	assert(mSwapChain);
+	HR(mSwapChain->Present(0, 0));
+}
+
+void D3DApplication::DrawScene()
+{
+	Clear();
+	Present();
 }
 
 NAMESPACEEND

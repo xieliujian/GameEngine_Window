@@ -4,7 +4,7 @@
 #define __D3DApplication_h__
 
 #include <d3d11.h>
-#include "Prerequest.h"
+#include "Core.h"
 #include "Application.h"
 #include <WindowsX.h>
 #include "D3DUtil.h"
@@ -19,8 +19,11 @@ public:
 
 	virtual bool Init();
 	virtual int Run();
-	virtual void UpdateScene(float dt) = 0;
-	virtual void DrawScene() = 0;
+	virtual void Clear();
+	virtual void Present();
+
+	virtual void UpdateScene(float dt){}
+	virtual void DrawScene();
 
 	LRESULT MsgProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
 private:

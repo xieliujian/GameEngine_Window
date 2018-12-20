@@ -8,7 +8,7 @@ Application::Application(HINSTANCE hInstance)
 	mClientWidth(1024),
 	mClientHeight(768)
 {
-
+	mClearColor = Color(49.0f / 255.0f, 77.0f / 255.0f, 121.0f / 255.0f, 1.0f);
 }
 
 Application::~Application()

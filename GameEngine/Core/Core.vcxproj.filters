@@ -36,6 +36,9 @@
     <ClInclude Include="Include\Color.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Include\Core.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Application.cpp">

@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="Include\Application.h" />
     <ClInclude Include="Include\Color.h" />
+    <ClInclude Include="Include\Core.h" />
     <ClInclude Include="Include\DataChunkWrite.h" />
     <ClInclude Include="Include\GameTimer.h" />
     <ClInclude Include="Include\Prerequest.h" />
